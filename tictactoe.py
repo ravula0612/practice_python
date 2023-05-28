@@ -7,11 +7,11 @@ gameRunning = True
 
 # printing the game board
 def printBoard(board):
-    print(board[0] +" | " +board[1] +" | "+ board[2])
+    print(f"{board[0]} | {board[1]} | {board[2]}")
     print("------------------------------")
-    print(board[3] +" | " +board[4] +" | "+ board[5])
+    print(f"{board[3]} | {board[4]} | {board[5]}")
     print("------------------------------")
-    print(board[6] +" | " +board[7] +" | "+ board[8])
+    print(f"{board[6]} | {board[7]} | {board[8]}")
 # take player input
 
 def playerInput(board):
@@ -62,10 +62,7 @@ def checkTie(board):
 
 def switchplayer():
     global current_player
-    if current_player == "X":
-        current_player = "O"
-    else:
-        current_player = "X"
+    current_player = "O" if current_player == "X" else "X"
 
 def checkwin():
     if diagonal(board) or checkHorizontle(board) or checkRow(board):
